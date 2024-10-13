@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 
@@ -12,23 +13,17 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Join Konecta",
-};
-
-export default function SignUpForm() {
+export default function RegisterForm() {
   return (
-    <div className="flex items-center justify-center h-screen">
-      <Card className="mx-auto max-w-sm">
-        <CardHeader>
-          <CardTitle className="text-xl">Sign Up</CardTitle>
-          <CardDescription>
-            Enter your information to create an account
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
+    <Card className="mx-auto max-w-sm">
+      <CardHeader>
+        <CardTitle className="text-xl">Sign Up</CardTitle>
+        <CardDescription>
+          Enter your information to create an account
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <form action="">
           <div className="grid gap-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="grid gap-2">
@@ -57,17 +52,17 @@ export default function SignUpForm() {
               Create an account
             </Button>
             <Button variant="outline" className="w-full">
-              Sign up with GitHub
+              Sign up with Google
             </Button>
           </div>
           <div className="mt-4 text-center text-sm">
             Already have an account?{" "}
-            <Link href="/login" className="underline">
+            <Link href="/sign-in" className="underline">
               Sign in
             </Link>
           </div>
-        </CardContent>
-      </Card>
-    </div>
+        </form>
+      </CardContent>
+    </Card>
   );
 }
